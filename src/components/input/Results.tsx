@@ -10,7 +10,9 @@ const Results = ({ searchResults, selectColor }: P) => {
         key={index}
         className={styles.result}
         role="button"
-        onClick={() => selectColor(result)}
+        onClick={() => {
+          selectColor(result);
+        }}
       >
         <p>{result}</p>
       </div>

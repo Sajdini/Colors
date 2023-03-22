@@ -51,17 +51,18 @@ export interface Data {
 
 const App = () => {
   const [color, setColor] = useState("");
-  const [colorHexCode, setColorHexCode] = useState(" ");
+  const [colorHexCode, setColorHexCode] = useState("");
   const [searchResults, setSearchResults] = useState<string[]>([]);
   const [data, setData] = useState<Data[]>([]);
 
   useEffect(() => {
-    if (color.length < 2) return;
-    const searchedResults = Object.keys(colorsObject).filter(
-      (key) => key.slice(0, color.length) === color
-    );
-    setSearchResults(searchedResults);
-  }, [color]);
+    if (color.length > 2 && !colorHexCode.length) {
+      const searchedResults = Object.keys(colorsObject).filter(
+        (key) => key.slice(0, color.length) === color
+      );
+      setSearchResults(searchedResults);
+    }
+  }, [color, colorHexCode]);
 
   useEffect(() => {
     const storedData = localStorage.getItem("myItems");
@@ -72,8 +73,10 @@ const App = () => {
 
   // selecting color from the Results component (autosuggest component)
   const selectColor = (color: string) => {
+    setSearchResults([]);
     const hexCode = colorsObject[color as keyof typeof colorsObject];
     setColorHexCode(hexCode);
+    setColor("");
     setSearchResults([]);
   };
   //
@@ -89,11 +92,10 @@ const App = () => {
     setData(items);
   };
 
-  const removeColorHandler = (id: string) => {
-    console.log("this");
+  const removeColorHandler = async (id: string) => {
     const dataFromLs = localStorage.getItem("myItems");
     if (dataFromLs) {
-      const filteredData = JSON.parse(dataFromLs).filter(
+      const filteredData = await JSON.parse(dataFromLs).filter(
         (item: Data) => item.id !== id
       );
       localStorage.setItem("myItems", JSON.stringify(filteredData));

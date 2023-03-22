@@ -1,6 +1,7 @@
 .inputLayoutContainer {
   display: flex;
   gap: 3rem;
+  justify-content: space-between;
 }
 
 .inputWrapper {
@@ -10,7 +11,7 @@
   align-items: center;
   gap: 0;
   border: 1px #999 solid;
-  flex-basis: 85%;
+  flex-basis: 90%;
 }
 
 .input {
@@ -19,13 +20,15 @@
   color: #999;
   font-family: Montserrat;
   width: 100%;
+  flex-shrink: 1;
 }
 
 .colorBox {
   height: 100%;
-  width: 2.5rem;
-  padding: 5px;
+  width: 2rem;
   flex-basis: 10%;
+  padding: 5px;
+  flex-shrink: 0;
 }
 
 .colorBox div {

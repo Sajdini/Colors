@@ -1,4 +1,3 @@
-import React from "react";
 import styles from "./InputLayout.module.css";
 import Results from "./Results";
 
@@ -22,12 +21,11 @@ const Input = ({
       <div className={styles.relativePositionContainer}>
         <input
           className={styles.input}
-          type="text"
-          placeholder="Color Name"
           value={color}
+          placeholder="Add a color"
           onChange={(e) => setColor(e.target.value)}
         />
-        {color.length >= 3 && (
+        {searchResults.length > 1 && (
           <Results searchResults={searchResults} selectColor={selectColor} />
         )}
       </div>

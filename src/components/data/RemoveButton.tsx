@@ -12,7 +12,7 @@ const RemoveButton = ({ id, onRemove }: P) => {
       role="button"
       onClick={() => onRemove(id)}
     >
-      Remove Button
+      Remove Color
     </div>
   );
 };

@@ -11,11 +11,17 @@ const DataDisplay = ({ data, onRemove }: P) => {
     const { color, hexCode, id } = row;
     return <Row color={color} hexCode={hexCode} id={id} onRemove={onRemove} />;
   });
-
+  console.log(data);
   return (
     <div>
       <Header isTitle={false} value="Color Collection" />
-      <div className={styles.rowsContainer}>{rowData}</div>
+      <div className={styles.rowsContainer}>
+        {rowData.length > 0 ? (
+          rowData
+        ) : (
+          <div className={styles.noColor}>No colors, add some</div>
+        )}
+      </div>
     </div>
   );
 };
