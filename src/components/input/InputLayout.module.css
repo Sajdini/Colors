@@ -1,0 +1,93 @@
+.inputLayoutContainer {
+  display: flex;
+  gap: 3rem;
+}
+
+.inputWrapper {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: center;
+  gap: 0;
+  border: 1px #999 solid;
+  flex-basis: 85%;
+}
+
+.input {
+  padding: 20px 10px;
+  font-size: 1.2rem;
+  color: #999;
+  font-family: Montserrat;
+  width: 100%;
+}
+
+.colorBox {
+  height: 100%;
+  width: 2.5rem;
+  padding: 5px;
+  flex-basis: 10%;
+}
+
+.colorBox div {
+  width: 100%;
+  height: 100%;
+  border-radius: 6px;
+}
+
+.addButton {
+  flex-basis: 20%;
+  font-size: 3rem;
+  font-weight: 900;
+  background-color: #000;
+  max-width: 6rem;
+  color: #fff;
+  display: flex;
+  justify-self: end !important;
+  align-items: center;
+  justify-content: center;
+  border-radius: 8px;
+  transition: all 300ms;
+  cursor: pointer;
+  user-select: none;
+}
+
+.addButton:active {
+  transform: scale(85%);
+}
+
+.relativePositionContainer {
+  position: relative;
+  flex-basis: 90%;
+}
+
+.resultsContainer {
+  position: absolute;
+  width: 100%;
+  background-color: #fff;
+  top: 75px;
+  border-radius: 1px solid #ddd;
+  max-height: 20vh;
+  overflow-y: auto;
+  scrollbar-width: thick;
+  border-radius: 8px;
+  border: 1px solid #999;
+}
+
+.result {
+  cursor: pointer;
+  transition: all 300ms ease-in-out;
+  padding: 10px;
+}
+.result:hover {
+  background-color: beige;
+}
+.result p {
+  margin: 0;
+  font-size: 1rem;
+  color: #999;
+}
+
+.noResults {
+  margin: 0;
+  padding: 5px;
+}

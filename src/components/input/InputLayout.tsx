@@ -1,7 +1,6 @@
-import React from "react";
-import Header from "./header/Header";
-import InputLayout from "./input/InputLayout";
-
+import AddButton from "./AddButton";
+import Input from "./Input";
+import styles from "./InputLayout.module.css";
 interface P {
   setColor: React.Dispatch<React.SetStateAction<string>>;
   color: string;
@@ -11,27 +10,26 @@ interface P {
   addColor: () => Promise<void>;
 }
 
-const InputSection = ({
+const InputLayout = ({
   setColor,
-  color,
   colorHexCode,
   searchResults,
+  color,
   selectColor,
   addColor,
 }: P) => {
   return (
-    <>
-      <Header isTitle value="My Favorite Colors" />
-      <InputLayout
+    <div className={styles.inputLayoutContainer}>
+      <Input
         setColor={setColor}
         color={color}
         colorHexCode={colorHexCode}
-        selectColor={selectColor}
         searchResults={searchResults}
-        addColor={addColor}
+        selectColor={selectColor}
       />
-    </>
+      <AddButton addColor={addColor} />
+    </div>
   );
 };
 
-export default InputSection;
+export default InputLayout;
