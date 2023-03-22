@@ -25,6 +25,7 @@ const Input = ({
           placeholder="Add a color"
           onChange={(e) => setColor(e.target.value)}
         />
+        <div className={styles.heartIcon} />
         {searchResults.length > 1 && (
           <Results searchResults={searchResults} selectColor={selectColor} />
         )}

@@ -1,6 +1,10 @@
+html {
+  font-size: 62.5%;
+}
+
 body {
   margin: 0;
-  padding: 0;
+  padding: 0 1rem;
 }
 *,
 body {
@@ -25,14 +29,33 @@ body {
 
 .App {
   width: 100%;
-  max-width: 70rem;
+  max-width: 112rem;
   box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
-  margin: 2rem auto;
-  padding: 1rem;
+  margin: 3.2rem auto;
+  padding: 1.6rem;
   border-radius: 8px;
   border: 1px solid #ddd;
   display: flex;
   flex-direction: column;
   justify-content: center;
-  gap: 1rem;
+  gap: 1.6rem;
+}
+@media (max-width: 62.5em) {
+  html {
+    font-size: 55%;
+  }
+}
+@media (max-width: 53.12em) {
+  html {
+    font-size: 48%;
+  }
+}
+
+@media (max-width: 32.5em) {
+  html {
+    font-size: 40%;
+  }
+  .App {
+    gap: 1rem;
+  }
 }
