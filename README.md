@@ -25,7 +25,11 @@ The app will be available at http://localhost:3000.
 The following packages were used in this project:
 
 React (^18.2.0)
+
 React DOM (^18.2.0)
+
 TypeScript (^4.9.5)
+
 use-debounce (^9.0.3)
+
 uuid (^9.0.0)
