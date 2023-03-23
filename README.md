@@ -20,7 +20,7 @@ npm start
 
 The app will be available at http://localhost:3000.
 
-### Packages used
+## Packages used
 
 The following packages were used in this project:
 
