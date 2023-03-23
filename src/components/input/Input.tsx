@@ -26,8 +26,11 @@ const Input = ({
           onChange={(e) => setColor(e.target.value)}
         />
         <div className={styles.heartIcon} />
-        {searchResults.length > 1 && (
-          <Results searchResults={searchResults} selectColor={selectColor} />
+        {searchResults.length >= 1 && (
+          <Results
+            searchResults={[...searchResults]}
+            selectColor={selectColor}
+          />
         )}
       </div>
       <div className={styles.colorBox}>

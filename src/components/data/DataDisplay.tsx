@@ -1,20 +1,25 @@
-import Header from "./header/Header";
-import styles from "./data/Row.module.css";
-import { Data } from "../App";
-import Row from "./data/Row";
+import Header from "../header/Header";
+import styles from "./Row.module.css";
+import { Data } from "../../App";
+import Row from "./Row";
+import Spinner from "../spinner/Spinner";
 export interface P {
   data: Data[];
   onRemove: (e: string) => void;
+  isLoading: boolean;
 }
-const DataDisplay = ({ data, onRemove }: P) => {
+const DataDisplay = ({ data, onRemove, isLoading }: P) => {
   const rowData = data.map((row) => {
     const { color, hexCode, id } = row;
     return <Row color={color} hexCode={hexCode} id={id} onRemove={onRemove} />;
   });
-  console.log(data);
+
   return (
     <div>
-      <Header isTitle={false} value="Color Collection" />
+      <div className={styles.headerContainer}>
+        <Header isTitle={false} value="Color Collection" />
+        {isLoading && <Spinner />}
+      </div>
       <div className={styles.rowsContainer}>
         {rowData.length > 0 ? (
           rowData

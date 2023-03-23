@@ -20,7 +20,7 @@ const Results = ({ searchResults, selectColor }: P) => {
   });
   return (
     <div className={styles.resultsContainer}>
-      {searchResults.length >= 1 ? (
+      {searchResults.length > 0 ? (
         searchedItem
       ) : (
         <p className={styles.noResults}>No results</p>

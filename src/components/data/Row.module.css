@@ -1,3 +1,9 @@
+.headerContainer {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  gap: 2rem;
+}
 .rowsContainer {
   display: flex;
   flex-direction: column;
@@ -58,5 +64,9 @@
   }
   .removeButton {
     letter-spacing: 1px;
+    padding: 0.8rem;
+  }
+  .colorContainer p {
+    letter-spacing: 0.1rem;
   }
 }

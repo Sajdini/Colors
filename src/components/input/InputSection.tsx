@@ -1,6 +1,6 @@
 import React from "react";
-import Header from "./header/Header";
-import InputLayout from "./input/InputLayout";
+import Header from "../header/Header";
+import InputLayout from "./InputLayout";
 
 interface P {
   setColor: React.Dispatch<React.SetStateAction<string>>;
